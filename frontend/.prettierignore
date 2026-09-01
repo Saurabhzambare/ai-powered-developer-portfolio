@@ -3,3 +3,4 @@ dist/
 package-lock.json
 public/
 src/assets/
+test-results/
