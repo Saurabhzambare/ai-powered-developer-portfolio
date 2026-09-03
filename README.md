@@ -2,9 +2,11 @@
 
 A recruiter-first developer portfolio and structured full-stack / applied-AI learning project.
 
-> **Project Status:** Foundation complete — implementation not yet started.
+> **Project Status:** Phase 3 — Frontend Initialization is complete.
 >
-> The application and AI capabilities described as planned in this README have not yet been implemented unless explicitly stated otherwise.
+> Steps 24–40 were implemented and individually verified. Step 41 — Frontend Foundation Gate passed with project-owner acceptance.
+>
+> Portfolio UI and design-system work has not begun. Step 42 is the next planned step and has not started.
 
 ---
 
@@ -73,7 +75,7 @@ Approved foundation work includes:
 - Master Build Order
 - Definition of Done
 - Repository Agent Instructions
-- README v0.1
+- README v0.2
 
 The approved Master Build Order defines:
 
@@ -85,11 +87,28 @@ across:
 
 with milestone gates from M0 through M5.
 
+Steps 24–40 of the Phase 3 frontend foundation are implemented and individually verified. The current foundation includes:
+
+- React, Vite, and TypeScript
+- Declarative React Router routing
+- Tailwind CSS integration
+- Motion and Lucide React dependencies
+- ESLint and Prettier
+- Vitest and React Testing Library
+- Playwright
+- Responsibility-based frontend source organization
+- Minimal application configuration
+- RootLayout and Not Found handling
+- A neutral global CSS baseline
+- A project-owned global ErrorBoundary
+
+Step 41 — Frontend Foundation Gate passed with project-owner acceptance. Phase 3 — Frontend Initialization is complete. Step 42 is the next planned step and has not started.
+
 ## Not Yet Implemented
 
 The following application capabilities do not yet exist:
 
-- React portfolio application
+- Portfolio design-system and recruiter-facing UI
 - Public portfolio deployment
 - FastAPI backend
 - PostgreSQL application persistence
@@ -211,7 +230,7 @@ Core areas include:
 - Python
 - Django / Django REST Framework from existing project work
 - React / JavaScript from existing project work
-- TypeScript as the approved frontend language for this portfolio once implemented
+- TypeScript in the initialized frontend foundation
 - PostgreSQL
 - API development
 - Full-stack architecture
@@ -901,13 +920,17 @@ They will be evaluated based on:
 
 # Local Setup
 
-There are intentionally no application installation or run instructions in README v0.1.
+The initialized frontend application is located in `frontend/`.
 
-The implementation repository has not yet reached frontend/backend setup.
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-Setup instructions will be added as soon as runnable project components exist.
+Additional scripts provide formatting, linting, component tests, production builds, and Playwright E2E verification. Backend setup remains future work.
 
-Do not invent setup commands before the repository supports them.
+Phase 3 frontend-foundation verification and project-owner acceptance are complete. Step 42 remains not started.
 
 ---
 
@@ -978,12 +1001,16 @@ Third-party code/component licensing and attribution requirements will be review
 
 # Project Status
 
-**README Version:** 0.1
+**README Version:** 0.2
 
-**Foundation Status:** Complete
+**Planning Foundation:** M0 Complete
 
-**Implementation Status:** Not Started
+**Frontend Foundation Implementation:** Steps 24–40 implemented and individually verified
 
 **Current Milestone:** M0 — Foundation Complete
 
-**Next Stage:** Begin controlled execution of `docs/09-master-build-order.md`.
+**Last Completed Gate:** Step 41 — Frontend Foundation Gate — PASSED
+
+**Phase 3 Status:** COMPLETE — verified and accepted by the project owner
+
+**Next Planned Step:** Step 42 — Define semantic color tokens based on the approved dark-first visual direction — NOT STARTED
