@@ -1,5 +1,41 @@
 @import 'tailwindcss';
 
+:root {
+  --portfolio-color-background: #090b10;
+  --portfolio-color-foreground: #f4f7fb;
+
+  --portfolio-color-surface: #111621;
+  --portfolio-color-surface-elevated: #182131;
+
+  --portfolio-color-muted: #202a3a;
+  --portfolio-color-muted-foreground: #a8b3c7;
+
+  --portfolio-color-border: #64748b;
+
+  --portfolio-color-primary: #818cf8;
+  --portfolio-color-primary-foreground: #0b1020;
+
+  --portfolio-color-ring: #60a5fa;
+
+  --portfolio-color-destructive: #f87171;
+  --portfolio-color-destructive-foreground: #230607;
+}
+
+@theme inline {
+  --color-background: var(--portfolio-color-background);
+  --color-foreground: var(--portfolio-color-foreground);
+  --color-surface: var(--portfolio-color-surface);
+  --color-surface-elevated: var(--portfolio-color-surface-elevated);
+  --color-muted: var(--portfolio-color-muted);
+  --color-muted-foreground: var(--portfolio-color-muted-foreground);
+  --color-border: var(--portfolio-color-border);
+  --color-primary: var(--portfolio-color-primary);
+  --color-primary-foreground: var(--portfolio-color-primary-foreground);
+  --color-ring: var(--portfolio-color-ring);
+  --color-destructive: var(--portfolio-color-destructive);
+  --color-destructive-foreground: var(--portfolio-color-destructive-foreground);
+}
+
 @layer base {
   a {
     text-decoration-line: underline;
