@@ -39,6 +39,12 @@
 @theme static {
   --spacing: 0.25rem;
 
+  --radius-sm: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  --shadow-elevated: 0 16px 40px -20px rgb(0 0 0 / 0.72);
+
   --font-sans:
     ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
