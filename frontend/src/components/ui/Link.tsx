@@ -32,6 +32,9 @@ type LinkProps = InternalLinkProps | NativeLinkProps
 const ctaClassName =
   'inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border px-4 py-2 text-body-small font-semibold no-underline'
 
+const focusClassName =
+  'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring'
+
 const variantClassNames: Record<LinkVariant, string> = {
   text: 'text-primary underline decoration-1 underline-offset-4 visited:text-muted-foreground hover:text-foreground active:text-foreground',
   primary: `${ctaClassName} border-primary bg-primary text-primary-foreground hover:border-primary/90 hover:bg-primary/90 active:border-primary/85 active:bg-primary/85`,
@@ -51,7 +54,11 @@ export function Link(props: LinkProps) {
       variant = 'text',
       ...routerLinkProps
     } = props
-    const linkClassName = [variantClassNames[variant], className]
+    const linkClassName = [
+      variantClassNames[variant],
+      focusClassName,
+      className,
+    ]
       .filter(Boolean)
       .join(' ')
 
@@ -63,7 +70,7 @@ export function Link(props: LinkProps) {
   }
 
   const { children, className, href, variant = 'text', ...anchorProps } = props
-  const linkClassName = [variantClassNames[variant], className]
+  const linkClassName = [variantClassNames[variant], focusClassName, className]
     .filter(Boolean)
     .join(' ')
 

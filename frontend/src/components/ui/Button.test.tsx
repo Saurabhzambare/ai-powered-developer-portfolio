@@ -17,7 +17,12 @@ describe('Button', () => {
     const button = screen.getByRole('button', { name: 'Continue' })
 
     expect(button).toHaveAttribute('type', 'button')
-    expect(button).toHaveClass('w-full')
+    expect(button).toHaveClass(
+      'w-full',
+      'focus-visible:outline-hidden',
+      'focus-visible:ring-2',
+      'focus-visible:ring-ring',
+    )
 
     await user.click(button)
 

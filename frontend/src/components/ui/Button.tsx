@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const baseClassName =
-  'inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border px-4 py-2 text-body-small font-semibold disabled:cursor-not-allowed disabled:opacity-50'
+  'inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border px-4 py-2 text-body-small font-semibold disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring'
 
 const variantClassNames: Record<ButtonVariant, string> = {
   primary:

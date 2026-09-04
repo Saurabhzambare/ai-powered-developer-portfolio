@@ -49,6 +49,9 @@ describe('Textarea', () => {
       'disabled:cursor-not-allowed',
       'disabled:opacity-50',
       'aria-invalid:border-destructive',
+      'focus-visible:outline-hidden',
+      'focus-visible:ring-2',
+      'focus-visible:ring-ring',
       'col-span-2',
     )
     expect(textareaRef.current).toBe(textarea)

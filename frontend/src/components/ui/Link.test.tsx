@@ -11,9 +11,13 @@ describe('Link', () => {
       </MemoryRouter>,
     )
 
-    expect(screen.getByRole('link', { name: 'View projects' })).toHaveAttribute(
-      'href',
-      '/projects',
+    const link = screen.getByRole('link', { name: 'View projects' })
+
+    expect(link).toHaveAttribute('href', '/projects')
+    expect(link).toHaveClass(
+      'focus-visible:outline-hidden',
+      'focus-visible:ring-2',
+      'focus-visible:ring-ring',
     )
     expect(screen.queryByRole('button')).not.toBeInTheDocument()
   })
@@ -38,6 +42,11 @@ describe('Link', () => {
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')
     expect(link).toHaveAttribute('title', 'Example website')
     expect(link).toHaveAttribute('data-source', 'portfolio')
+    expect(link).toHaveClass(
+      'focus-visible:outline-hidden',
+      'focus-visible:ring-2',
+      'focus-visible:ring-ring',
+    )
   })
 
   it('uses the underlined semantic text contract by default', () => {
