@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+/* Dark theme values (default — dark-first design direction) */
 :root {
   --portfolio-color-background: #090b10;
   --portfolio-color-foreground: #f4f7fb;
@@ -19,6 +20,28 @@
 
   --portfolio-color-destructive: #f87171;
   --portfolio-color-destructive-foreground: #230607;
+}
+
+/* Light theme values (placeholder for future implementation) */
+[data-theme='light'] {
+  --portfolio-color-background: #f8f9fc;
+  --portfolio-color-foreground: #0f1729;
+
+  --portfolio-color-surface: #ffffff;
+  --portfolio-color-surface-elevated: #f1f3f8;
+
+  --portfolio-color-muted: #e8ebf0;
+  --portfolio-color-muted-foreground: #5c6578;
+
+  --portfolio-color-border: #c8ced8;
+
+  --portfolio-color-primary: #6366f1;
+  --portfolio-color-primary-foreground: #ffffff;
+
+  --portfolio-color-ring: #3b82f6;
+
+  --portfolio-color-destructive: #ef4444;
+  --portfolio-color-destructive-foreground: #ffffff;
 }
 
 @theme inline {
