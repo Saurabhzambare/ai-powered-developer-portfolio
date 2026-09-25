@@ -1,9 +1,13 @@
 import { Outlet } from 'react-router'
+import { DesktopNavigation } from '../components/layout/DesktopNavigation'
 
 export function RootLayout() {
   return (
-    <main>
-      <Outlet />
-    </main>
+    <>
+      <DesktopNavigation />
+      <main>
+        <Outlet />
+      </main>
+    </>
   )
 }
