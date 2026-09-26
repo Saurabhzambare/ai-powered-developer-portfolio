@@ -74,4 +74,3 @@ External evidence-page availability was not reconfirmed during this gate; Step 6
 The factual content corrections and documentation have passed external review. No homepage, route, component, project media, language model, PDF revision, or Step 80+ work is part of this gate.
 
 STEP 79 GATE: PASS
-
