@@ -2,11 +2,11 @@
 
 A recruiter-first developer portfolio and structured full-stack / applied-AI learning project.
 
-> **Project Status:** Phase 3 — Frontend Initialization is complete.
+> **Project Status:** Phase 6 — Professional Content Model and Homepage is in progress.
 >
-> Steps 24–40 were implemented and individually verified. Step 41 — Frontend Foundation Gate passed with project-owner acceptance.
+> The frontend foundation, design system, responsive shell, and source-controlled professional content through Step 79 are complete.
 >
-> Portfolio UI and design-system work has not begun. Step 42 is the next planned step and has not started.
+> Step 79 — Public Content Truthfulness Review has passed. Step 80 — Build the homepage Hero layout is next.
 
 ---
 
@@ -87,7 +87,7 @@ across:
 
 with milestone gates from M0 through M5.
 
-Steps 24–40 of the Phase 3 frontend foundation are implemented and individually verified. The current foundation includes:
+Steps 24–40 of the Phase 3 frontend foundation were implemented and individually verified. The frontend includes:
 
 - React, Vite, and TypeScript
 - Declarative React Router routing
@@ -101,14 +101,17 @@ Steps 24–40 of the Phase 3 frontend foundation are implemented and individuall
 - RootLayout and Not Found handling
 - A neutral global CSS baseline
 - A project-owned global ErrorBoundary
+- Semantic design tokens and reusable UI primitives
+- Responsive desktop/mobile navigation and a shared footer
+- Source-controlled professional content and an approved public resume asset
 
-Step 41 — Frontend Foundation Gate passed with project-owner acceptance. Phase 3 — Frontend Initialization is complete. Step 42 is the next planned step and has not started.
+Step 41 — Frontend Foundation Gate and Step 67 — Professional Evidence Gate passed. Steps 68–79 are complete. Step 79 — Public Content Truthfulness Review passed; homepage implementation has not started.
 
 ## Not Yet Implemented
 
 The following application capabilities do not yet exist:
 
-- Portfolio design-system and recruiter-facing UI
+- Homepage and other recruiter-facing content sections
 - Public portfolio deployment
 - FastAPI backend
 - PostgreSQL application persistence
@@ -547,28 +550,6 @@ Newer verified corrections override older drafts.
 
 ---
 
-# Known Invalid Professional Information
-
-The following historical claim is explicitly invalid:
-
-**Innovation Centre SSM — IT Support Engineer Internship**
-
-It must not be presented as real professional experience.
-
-It must also remain excluded from:
-
-- Portfolio content
-- Resume
-- LinkedIn content
-- GitHub presentation
-- AI knowledge sources
-- RAG corpus
-- Career summaries
-
-even if it appears in older historical material.
-
----
-
 # Current Project Evidence
 
 ## Discipline System
@@ -592,19 +573,25 @@ The portfolio presentation will use verified project evidence and approved scree
 
 ## EPC Project & Vendor Management System
 
-An in-development software project using a different technology ecosystem.
+The repository contains implemented C#/.NET foundations for project and vendor management alongside documented plans for a larger application.
 
-Current technical areas include:
+**Implemented evidence:**
 
-- .NET
-- MVC
-- Entity Framework Core
-- SQL Server
-- Razor
-- Bootstrap
-- Testing
+- C# and .NET 8
+- LINQ and async/await exercises
+- Vendor, Employee, and Project domain models with in-memory workflow exercises
+- xUnit tests for implemented vendor behavior
 
-Public repository metadata/documentation requires cleanup before final portfolio publication.
+**Documented / planned application architecture:**
+
+- ASP.NET Core MVC
+- Entity Framework Core and SQL Server persistence
+- Identity and role direction
+- Razor and ViewModel conventions
+- CRUD and business workflows
+- Ajax, reporting, and UI direction where documented
+
+These application architecture items are design work, not implemented features or a working application UI.
 
 ## Data / Analytics Projects
 
@@ -930,7 +917,7 @@ npm run dev
 
 Additional scripts provide formatting, linting, component tests, production builds, and Playwright E2E verification. Backend setup remains future work.
 
-Phase 3 frontend-foundation verification and project-owner acceptance are complete. Step 42 remains not started.
+The frontend foundation and design system are in place. Step 79 — Public Content Truthfulness Review has passed. Step 80 — Homepage Hero layout is next.
 
 ---
 
@@ -1007,10 +994,10 @@ Third-party code/component licensing and attribution requirements will be review
 
 **Frontend Foundation Implementation:** Steps 24–40 implemented and individually verified
 
-**Current Milestone:** M0 — Foundation Complete
+**Current Milestone:** M1 — Portfolio MVP in progress
 
-**Last Completed Gate:** Step 41 — Frontend Foundation Gate — PASSED
+**Last Completed Gate:** Step 67 — Professional Evidence Gate — PASSED
 
-**Phase 3 Status:** COMPLETE — verified and accepted by the project owner
+**Phase 6 Status:** Steps 68–79 complete; Step 80 is next
 
-**Next Planned Step:** Step 42 — Define semantic color tokens based on the approved dark-first visual direction — NOT STARTED
+**Next Planned Step:** Step 80 — Build the homepage Hero layout — NOT STARTED
