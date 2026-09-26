@@ -82,9 +82,7 @@ export interface ProjectMedia {
 }
 
 export type ProjectCategory =
-  | 'software-development'
-  | 'data-analytics'
-  | 'machine-learning'
+  'software-development' | 'data-analytics' | 'machine-learning'
 
 export interface PortfolioProject {
   readonly id: string
