@@ -115,7 +115,7 @@ Reason:
 - Shows MVC / relational application development
 - Increases breadth
 
-It must be clearly labelled as in development until finished.
+Public copy must distinguish the verified C#/.NET warm-up implementation from the planned MVC application. A blanket `Under Development` badge is not required; the project description, technology labels, evidence, and case-study wording must make the implemented-versus-designed boundary clear.
 
 ## Secondary Data / Analytics Projects
 
