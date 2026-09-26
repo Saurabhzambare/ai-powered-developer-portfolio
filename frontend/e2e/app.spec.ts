@@ -1,13 +1,16 @@
 import { expect, test } from '@playwright/test'
 
-test('increments the counter', async ({ page }) => {
+test('shows the homepage introduction without Vite starter content', async ({
+  page,
+}) => {
   await page.goto('/')
 
-  const initialCounter = page.getByRole('button', { name: /count is 0/i })
-
-  await expect(initialCounter).toBeVisible()
-  await initialCounter.click()
-  await expect(page.getByRole('button', { name: /count is 1/i })).toBeVisible()
+  await expect(page.getByRole('main')).toBeVisible()
+  await expect(page.getByRole('region', { name: 'Introduction' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Get started' })).toHaveCount(
+    0,
+  )
+  await expect(page.getByRole('button', { name: /count is/i })).toHaveCount(0)
 })
 
 test('returns home from an unknown route', async ({ page }) => {
@@ -23,5 +26,5 @@ test('returns home from an unknown route', async ({ page }) => {
   await returnHomeLink.click()
 
   await expect(page).toHaveURL('/')
-  await expect(page.getByRole('button', { name: /count is 0/i })).toBeVisible()
+  await expect(page.getByRole('region', { name: 'Introduction' })).toBeVisible()
 })
