@@ -1,6 +1,6 @@
 # Professional Evidence Register
 
-**Status:** INTERNAL / STEP 67 REVIEW  
+**Status:** INTERNAL / STEP 67 PASS
 **Evidence review date:** 2026-09-26
 
 ## 1. Purpose and Claim Rules
@@ -116,7 +116,7 @@ Use implementation verbs such as `built`, `implemented`, `integrated`, and `supp
 
 - **Discipline repository hygiene:** [pull request #39](https://github.com/Saurabhzambare/discipline-system/pull/39) from branch `codex/step-67-repository-hygiene` removes tracked environment files, the local SQLite database, local editor state, generated Graphify artifacts, and the untitled note; adds safe environment examples and ignore rules; and updates setup documentation. Its follow-up commit loads Django's `SECRET_KEY` from the environment, documents the required local value, and makes Docker Compose override `DB_HOST=db` for the backend container. Django's system check, all 322 backend tests, and Docker Compose configuration validation pass. The original correctness review thread is resolved.
 - **Discipline historical credential handling:** populated environment files and a literal Django development secret existed in public Git history. Git history has not been rewritten and must not be described as sanitized. The Django secret should be treated as exposed and replaced. Any database password reused outside local development should be rotated. A key-name audit found a Google OAuth client ID but no OAuth client-secret key; a client ID alone is not a secret.
-- **Discipline remaining review item:** the binary `.gitattributes` entries added for the removed environment-file paths do not remove or secure historical content and still need final disposition before this gate passes.
+- **Discipline `.gitattributes` correction:** the misleading binary rules for the removed environment-file paths were removed. Normal text normalization remains. This change does not rewrite or sanitize Git history.
 - **EPC public presentation:** [pull request #4](https://github.com/Saurabhzambare/epc-vendor-management/pull/4) from branch `codex/step-67-presentation-correction` distinguishes implemented C#/.NET 8 warm-up evidence from planned MVC architecture and now describes Phase 1 as partially complete because the roadmap's interface exercise is outstanding. The build and all three tests pass, and the original review thread is resolved. The GitHub repository description uses accurate implemented/design wording.
 
 ### Phase 6 media follow-up
@@ -129,4 +129,4 @@ Use implementation verbs such as `built`, `implemented`, `integrated`, and `supp
 
 The selected real evidence sources satisfy Step 67. Final copied/exported media filenames will follow the Phase 6 media convention and do not independently block this gate.
 
-**Gate decision:** REVIEW. Final PASS remains pending only on the Discipline `.gitattributes` disposition and owner acceptance of this evidence boundary. Do not begin Step 68 in this document.
+**Gate decision:** PASS. Phase 5 — Professional Content and Evidence Preparation is complete. Next is Phase 6 — Professional Content Model and Homepage, Step 68; do not begin Step 68 as part of this gate.
