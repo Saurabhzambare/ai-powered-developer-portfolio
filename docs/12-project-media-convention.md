@@ -1,4 +1,4 @@
-﻿# Project Media Convention
+# Project Media Convention
 
 **Status:** APPROVED / BASELINE
 
@@ -84,4 +84,3 @@ The following is future media direction from the Step 67 Professional Evidence R
 | `ai-powered-developer-portfolio` | No separate project-card screenshot is currently required. The application may become evidence after meaningful recruiter-facing implementation exists; do not create an image merely to fill a slot. | None currently |
 
 When later ProjectCard or case-study steps need an approved visual, export it to the project's folder, set `ProjectMedia.src` to its root-relative public URL, and write factual alt text and any useful caption. Do not populate project `media` arrays until those presentation steps require the reviewed assets.
-
