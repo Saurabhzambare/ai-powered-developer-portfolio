@@ -84,12 +84,15 @@ export interface ProjectMedia {
 export type ProjectCategory =
   'software-development' | 'data-analytics' | 'machine-learning'
 
+export type ProjectPriority = 'featured' | 'supporting' | 'not-displayed'
+
 export interface PortfolioProject {
   readonly id: string
   readonly title: string
   readonly summary: string
   readonly category: ProjectCategory
-  readonly featured?: boolean
+  readonly priority: ProjectPriority
+  readonly status?: string
   // List technologies actually used, not a planned application stack.
   readonly technologies: readonly string[]
   readonly links?: ProjectLinks
