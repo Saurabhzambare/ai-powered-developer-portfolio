@@ -2,7 +2,7 @@ import type { CandidateProfile } from './types'
 
 export const candidateProfile = {
   name: 'Saurabh Zambare',
-  headline: 'Software Developer | Full-Stack Web Development',
+  headline: 'Software Developer | Python, Django, React & PostgreSQL',
   summary:
     'Early-career software developer with hands-on project experience in full-stack web development, data analysis, and machine learning. My background combines technical education in India and Canada with professional leadership experience in Canada.',
   about: [
