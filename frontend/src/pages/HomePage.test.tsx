@@ -34,6 +34,17 @@ describe('HomePage', () => {
     })
     expect(projectsLink).toHaveAttribute('href', '#projects')
 
+    const projectsSection = within(main).getByRole('region', {
+      name: 'Featured Projects',
+    })
+    expect(projectsSection).toHaveAttribute('id', 'projects')
+    expect(
+      within(projectsSection).getByRole('heading', {
+        level: 2,
+        name: 'Featured Projects',
+      }),
+    ).toBeInTheDocument()
+
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
     expect(resumeLink).toHaveAttribute('target', '_blank')
