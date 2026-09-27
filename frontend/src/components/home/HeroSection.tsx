@@ -1,3 +1,4 @@
+import { motion, useReducedMotion } from 'motion/react'
 import { candidateProfile } from '../../content/candidateProfile'
 import { resumeAsset } from '../../content/resumeAsset'
 import { Container } from '../layout/Container'
@@ -6,13 +7,24 @@ import { Link } from '../ui/Link'
 import { Text } from '../ui/Text'
 
 export function HeroSection() {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
     <section
       aria-label="Introduction"
       className="w-full border-b border-border bg-surface py-20 sm:py-24 lg:py-32"
     >
       <Container>
-        <div className="flex max-w-3xl flex-col gap-5 sm:gap-6">
+        <motion.div
+          className="flex max-w-3xl flex-col gap-5 sm:gap-6"
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={
+            shouldReduceMotion
+              ? { duration: 0 }
+              : { duration: 0.45, ease: [0.22, 1, 0.36, 1] }
+          }
+        >
           <Text variant="body-large" className="font-semibold text-primary">
             {candidateProfile.headline}
           </Text>
@@ -35,7 +47,7 @@ export function HeroSection() {
               View Resume
             </Link>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   )
