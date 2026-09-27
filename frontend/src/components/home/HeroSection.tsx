@@ -1,6 +1,8 @@
 import { candidateProfile } from '../../content/candidateProfile'
+import { resumeAsset } from '../../content/resumeAsset'
 import { Container } from '../layout/Container'
 import { Heading } from '../ui/Heading'
+import { Link } from '../ui/Link'
 import { Text } from '../ui/Text'
 
 export function HeroSection() {
@@ -20,6 +22,19 @@ export function HeroSection() {
           <Text variant="body-large" tone="muted" className="max-w-2xl">
             {candidateProfile.summary}
           </Text>
+          <div className="flex flex-wrap gap-3 pt-1">
+            <Link href="#projects" variant="primary">
+              View Projects
+            </Link>
+            <Link
+              href={resumeAsset.url}
+              variant="secondary"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Resume
+            </Link>
+          </div>
         </div>
       </Container>
     </section>
