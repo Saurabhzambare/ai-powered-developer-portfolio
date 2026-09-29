@@ -8,6 +8,8 @@ export const projects = [
       'React and TypeScript portfolio foundation with responsive navigation, reusable UI components, an error boundary, and component tests.',
     category: 'software-development',
     priority: 'not-displayed',
+    status:
+      'React/TypeScript frontend foundation and initial recruiter-facing homepage sections implemented; backend and AI capabilities remain planned.',
     technologies: [
       'React',
       'TypeScript',

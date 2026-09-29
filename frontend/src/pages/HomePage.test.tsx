@@ -112,6 +112,11 @@ describe('HomePage', () => {
       within(epcCard).queryByRole('link', { name: 'Case Study' }),
     ).toBeNull()
     expect(within(epcCard).queryByRole('img')).toBeNull()
+    expect(
+      within(projectsSection).queryByRole('heading', {
+        name: 'AI-Powered Developer Portfolio',
+      }),
+    ).toBeNull()
 
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
