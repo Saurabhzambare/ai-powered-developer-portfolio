@@ -7,6 +7,9 @@ export function FeaturedProjectsSection() {
   const disciplineProject = projects.find(
     (project) => project.id === 'discipline-system',
   )
+  const epcProject = projects.find(
+    (project) => project.id === 'epc-project-vendor-management',
+  )
 
   return (
     <section
@@ -22,9 +25,10 @@ export function FeaturedProjectsSection() {
         >
           Featured Projects
         </Heading>
-        {disciplineProject && (
+        {(disciplineProject || epcProject) && (
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <ProjectCard project={disciplineProject} />
+            {disciplineProject && <ProjectCard project={disciplineProject} />}
+            {epcProject && <ProjectCard project={epcProject} />}
           </div>
         )}
       </Container>

@@ -45,7 +45,7 @@ describe('HomePage', () => {
       }),
     ).toBeInTheDocument()
     const projectCards = within(projectsSection).getAllByRole('article')
-    expect(projectCards).toHaveLength(1)
+    expect(projectCards).toHaveLength(2)
 
     const disciplineCard = projectCards[0]
     expect(
@@ -76,11 +76,42 @@ describe('HomePage', () => {
       within(disciplineCard).queryByRole('link', { name: 'Case Study' }),
     ).toBeNull()
     expect(within(disciplineCard).queryByRole('img')).toBeNull()
+
+    const epcCard = projectCards[1]
     expect(
-      within(projectsSection).queryByRole('heading', {
+      within(epcCard).getByRole('heading', {
+        level: 3,
         name: 'EPC Project & Vendor Management System',
       }),
+    ).toBeInTheDocument()
+    expect(
+      within(epcCard).getByText(
+        'Implemented C# and .NET foundations for project and vendor management, alongside documented enterprise application design.',
+      ),
+    ).toBeInTheDocument()
+    expect(
+      within(epcCard).getByText(
+        'C# foundations implemented; MVC application architecture documented.',
+      ),
+    ).toBeInTheDocument()
+    expect(
+      within(epcCard)
+        .getAllByRole('listitem')
+        .map((item) => item.textContent),
+    ).toEqual(['C#', '.NET 8', 'LINQ', 'async/await', 'xUnit'])
+    expect(
+      within(epcCard).getByRole('link', { name: 'GitHub' }),
+    ).toHaveAttribute(
+      'href',
+      'https://github.com/Saurabhzambare/epc-vendor-management',
+    )
+    expect(
+      within(epcCard).queryByRole('link', { name: 'Live Demo' }),
     ).toBeNull()
+    expect(
+      within(epcCard).queryByRole('link', { name: 'Case Study' }),
+    ).toBeNull()
+    expect(within(epcCard).queryByRole('img')).toBeNull()
 
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
