@@ -1,7 +1,13 @@
+import { projects } from '../../content/projects'
 import { Container } from '../layout/Container'
+import { ProjectCard } from '../projects/ProjectCard'
 import { Heading } from '../ui/Heading'
 
 export function FeaturedProjectsSection() {
+  const disciplineProject = projects.find(
+    (project) => project.id === 'discipline-system',
+  )
+
   return (
     <section
       id="projects"
@@ -16,6 +22,11 @@ export function FeaturedProjectsSection() {
         >
           Featured Projects
         </Heading>
+        {disciplineProject && (
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <ProjectCard project={disciplineProject} />
+          </div>
+        )}
       </Container>
     </section>
   )

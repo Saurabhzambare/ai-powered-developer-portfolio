@@ -44,6 +44,43 @@ describe('HomePage', () => {
         name: 'Featured Projects',
       }),
     ).toBeInTheDocument()
+    const projectCards = within(projectsSection).getAllByRole('article')
+    expect(projectCards).toHaveLength(1)
+
+    const disciplineCard = projectCards[0]
+    expect(
+      within(disciplineCard).getByRole('heading', {
+        level: 3,
+        name: 'Discipline System',
+      }),
+    ).toBeInTheDocument()
+    expect(
+      within(disciplineCard).getByText(
+        'Full-stack productivity application that turns habits into quests, levels, streaks, achievements, and social progression.',
+      ),
+    ).toBeInTheDocument()
+    expect(
+      within(disciplineCard).getByText('Django REST Framework'),
+    ).toBeInTheDocument()
+    expect(within(disciplineCard).getByText('PostgreSQL')).toBeInTheDocument()
+    expect(
+      within(disciplineCard).getByRole('link', { name: 'GitHub' }),
+    ).toHaveAttribute(
+      'href',
+      'https://github.com/Saurabhzambare/discipline-system',
+    )
+    expect(
+      within(disciplineCard).queryByRole('link', { name: 'Live Demo' }),
+    ).toBeNull()
+    expect(
+      within(disciplineCard).queryByRole('link', { name: 'Case Study' }),
+    ).toBeNull()
+    expect(within(disciplineCard).queryByRole('img')).toBeNull()
+    expect(
+      within(projectsSection).queryByRole('heading', {
+        name: 'EPC Project & Vendor Management System',
+      }),
+    ).toBeNull()
 
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
