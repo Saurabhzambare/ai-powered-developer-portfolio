@@ -1,378 +1,134 @@
 # AI-Powered Developer Portfolio
 ## Current Status
 
-**Document Version:** 1.3
+**Document Version:** 2.0
 
-**Status:** CURRENT / PHASE 3 COMPLETE
+**Status:** CURRENT / PHASE 6 COMPLETE
 
-**Snapshot Date:** 2026-09-03
+**Snapshot Date:** 2026-09-30
 
-**Project Phase:** Phase 3 — Frontend Initialization — COMPLETE
+**Project Phase:** Phase 6 — Professional Content Model and Homepage — COMPLETE
 
-**Last Completed Gate:** Step 41 — Frontend Foundation Gate — PASSED
+**Last Completed Gate:** Step 98 — Homepage Content Gate — PASSED
+
+**Next:** Phase 7 — Projects and Case Studies; Step 99 — Create the Projects index route — NOT STARTED
 
 ---
 
 # 1. Purpose
 
-This document records the current verified project and professional baseline.
-
-It is the first place to check when older project notes conflict with newer approved information.
+This document records the current verified project and professional baseline. Newer approved project-owner corrections, the Professional Evidence Register, and the Public Content Truthfulness Review take precedence over superseded historical notes.
 
 ---
 
 # 2. Current Project State
 
-Round 1 — Project Foundation is complete.
+M0 — Foundation Complete. The approved Master Build Order contains 328 controlled steps across 24 phases. The Phase 3 frontend foundation, Phase 5 professional-content evidence work, and Phase 6 professional-content model and homepage are complete. Step 98 — Homepage Content Gate passed.
 
-Approved foundation documents:
+The frontend now includes:
 
-- Executive Summary
-- Project Requirements
-- Current Status
-- Content Inventory
-- Content Strategy
-- UI/UX Direction
-- Roadmap
-- Architecture
-- Technology Decisions
-- Master Build Order
-- Definition of Done
-- AGENTS.md
-- README v0.2
+- React, Vite, and TypeScript foundation
+- React Router routing shell, Not Found handling, and an error boundary
+- Dark-first semantic design system and reusable UI primitives
+- Responsive desktop/mobile navigation and a shared footer
+- Source-controlled professional content and the approved public resume asset
+- Recruiter-facing homepage with Hero, Featured Projects, Core Technical Skills, Professional Experience, Data & Machine Learning Projects, Education, Selected Professional Learning, About, and Resume/contact CTA
+- Responsive and keyboard-reviewed homepage, with visible focus and reduced-motion handling
+- ESLint, Prettier, Vitest, React Testing Library, Playwright configuration, and verified production build
 
-Steps 24–40 of the Phase 3 frontend foundation are implemented and individually verified.
-
-The current frontend foundation includes:
-
-- React, Vite, and TypeScript
-- Declarative React Router routing
-- Tailwind CSS integration
-- Motion and Lucide React dependencies
-- ESLint and Prettier
-- Vitest and React Testing Library
-- Playwright
-- Responsibility-based frontend source organization
-- Minimal application configuration
-- RootLayout and Not Found handling
-- A neutral global CSS baseline
-- A project-owned global ErrorBoundary
-
-Step 41 — Frontend Foundation Gate passed, Phase 3 is complete, and project-owner acceptance was received on September 3, 2026.
-
-Step 42 — Define semantic color tokens based on the approved dark-first visual direction — is the next implementation step and has not started.
-
-The approved Master Build Order contains:
-
-- 328 controlled implementation steps
-- 24 implementation phases
-- Milestones M0 through M5
+The homepage is implemented and verified locally. Public deployment has not been completed. M1 — Recruiter Portfolio MVP remains IN PROGRESS because later M1 requirements, including public deployment, are outstanding.
 
 ---
 
 # 3. Primary Career Positioning
 
-Primary public positioning:
-
-**Software Developer / Full-Stack Developer**
-
-Primary target roles include early-career software-development roles.
-
-The public portfolio should emphasize:
-
-- Software projects
-- Full-stack architecture
-- Python
-- React
-- PostgreSQL
-- API development
-- Testing
-- Applied AI as it becomes genuinely implemented
-
-Data / analytics work remains secondary supporting evidence.
+The primary public identity is **Software Developer / Full-Stack Developer**. Software projects and demonstrated technical skills lead the portfolio. Data and machine-learning projects provide supporting breadth. Planned AI capabilities are not presented as implemented.
 
 ---
 
-# 4. Verified Professional Experience Baseline
+# 4. Professional Experience
 
-Verified professional experience includes McDonald's Canada management / operations experience.
+The approved structured public record is:
 
-This experience may support transferable professional themes such as:
+**Department Manager — McDonald's Canada, October 2022 – May 2026**
 
-- Team leadership
-- Operations
-- Scheduling
-- Training and coaching
-- Inventory / waste awareness
-- Reporting
-- Process improvement
-- Communication
-- Problem-solving
-- Accountability
+The separate progression context states that Saurabh joined McDonald's Canada in 2021 as Crew Member and progressed into management. The 2021 date does not mark the start of Department Manager responsibilities. This operations experience supports transferable leadership, communication, training, and process-control skills; it is not technical employment.
 
-It must not be presented as technical employment.
-
-A safer high-level public chronology is:
-
-**McDonald's Canada — Crew Member → Kitchen / Department Manager, 2021–2026**
-
-Sub-role dates should be used only when verified.
-
-An official supporting record indicates a salaried manager start date of October 15, 2022, so public content must not imply management began in 2021 unless supporting evidence confirms it.
+Superseded and invalid employment claims remain excluded from public content.
 
 ---
 
-# 5. Explicit Professional Information Correction
+# 5. Education and Professional Learning
 
-The following previously stored experience is invalid:
+Approved formal education:
 
-**Innovation Centre SSM — IT Support Engineer Internship**
+- **Sault College:** Ontario College Diploma — Computer Programming; September 2021 – June 2023.
+- **ITM Vocational University:** Integrated B.Tech (Diploma + Degree) — Computer Science & Engineering; 2017 – 2020, completed June 2020.
 
-It must not be used as real professional experience.
-
-It must remain excluded from:
-
-- Portfolio
-- Resume
-- LinkedIn
-- GitHub presentation
-- AI knowledge sources
-- RAG corpus
-- Career summaries
-- Future generated documentation
-
-Older documents containing this claim are outdated with respect to this fact.
+The selected Simplilearn records appear under **Selected Professional Learning**, not academic degrees: Data Science with Python; Machine Learning Advanced Certification Training; Big Data Hadoop and Spark Developer; and Tableau Desktop 10. Their exact issuer/date fields remain in `frontend/src/content/credentials.ts`.
 
 ---
 
-# 6. Education Baseline
-
-Approved education baseline:
-
-## Sault College
-Ontario College Diploma — Computer Programming  
-September 2021 – June 2023
-
-## ITM Vocational University
-Integrated B.Tech (Diploma + Degree) — Computer Science & Engineering  
-2017 – 2020  
-Pass / completion: June 2020
-
-Simplilearn professional learning from approximately 2020–2021 may be presented separately from formal academic education.
-
----
-
-# 7. Certification / Professional Learning Baseline
-
-Existing professional-learning evidence may include selected Simplilearn and Udemy certificates such as:
-
-- Data Scientist program credential
-- Data Science with Python
-- Machine Learning
-- Big Data Hadoop and Spark Developer
-- Tableau Desktop
-- Data Science Capstone
-- Data Science with R
-- Python Programming
-
-Only relevant selected certificates should appear publicly.
-
-Certificates should not dominate the portfolio or be presented as proof of senior professional mastery.
-
----
-
-# 8. Current Software Project Baseline
+# 6. Project Evidence
 
 ## Discipline System
 
-Current strongest software-development project.
-
-Demonstrated areas include:
-
-- Python
-- Django
-- Django REST Framework
-- PostgreSQL
-- React
-- Vite
-- Tailwind CSS
-- JWT
-- Docker / Docker Compose
-- GitHub workflows
-- documented testing
-
-Repository documentation is relatively strong.
-
-An existing project screenshot is available.
-
-Deployment targets mentioned in documentation must not be treated as proof of a currently live deployment unless verified.
-
-This is the current primary portfolio project.
-
----
+This featured software project demonstrates implemented Python, Django, Django REST Framework, React, testing, and related full-stack work. PostgreSQL is configured, but production PostgreSQL operation and public deployment are not verified. The approved real dashboard is the source for a later presentation screenshot.
 
 ## EPC Project & Vendor Management System
 
-Current strong supporting software project, still in development.
+This featured project separates implemented C#/.NET foundations from documented application architecture.
 
-Demonstrated stack includes:
+**Implemented evidence:**
 
-- .NET 8 MVC
-- Entity Framework Core
-- SQL Server
+- C# and .NET 8
+- LINQ and async/await
+- Vendor, Employee, and Project domain models and in-memory exercises
+- xUnit tests
+
+**Documented / planned application architecture:**
+
+- ASP.NET Core MVC
+- Entity Framework Core and SQL Server
 - Identity
-- Razor
-- Bootstrap
-- JavaScript / jQuery / Ajax
-- xUnit
+- Razor / ViewModels
+- CRUD and business workflows
+- Ajax, reporting, and UI direction where documented
 
-Known repository presentation issues include:
+The documented architecture is design work, not an implemented MVC application. Step 63 completed the EPC repository presentation cleanup, and Step 67 verified the professional evidence gate; no stale cleanup claim remains current.
 
-- stale GitHub repository description
-- status/documentation inconsistency
-- need to ensure current project stage is accurately presented
+## Supporting Data and Machine-Learning Projects
 
-This project should be clearly labelled as in development.
+Market Analysis in Banking Domain, Mercedes-Benz Greener Manufacturing, and Real Estate & Mortgage Analytics remain supporting project evidence. Their source-controlled summaries distinguish exploration and analysis from validated production outcomes. No live demo is verified.
 
 ---
 
-# 9. Data / Analytics Project Baseline
+# 7. Current Gaps
 
-Existing public repositories include projects such as:
+The next work is Phase 7 — Projects and Case Studies, beginning with the Projects index route and later detailed case studies. Approved project media is still needed where later Build Order steps call for it.
 
-- Market Analysis in Banking Domain
-- Mercedes-Benz Greener Manufacturing
-- Real Estate Analytics / Capstone
-
-These projects provide supporting evidence for data/analytics capability.
-
-Current public-presentation weaknesses include incomplete or overly tutorial-like READMEs and inconsistent repository polish.
-
-They require cleanup before final portfolio publication.
+Public deployment is not complete. The FastAPI backend, this portfolio's PostgreSQL/pgvector integration, AI provider integration, Semantic Search/RAG, and later production deployment and CI/CD work remain future implementation. No production-readiness claim is made.
 
 ---
 
-# 10. AI Work Baseline
+# 8. Professional Claim Rule
 
-A future AI-enhanced portfolio is planned.
-
-The project roadmap includes:
-
-- LLM integration
-- Structured AI output
-- Embeddings
-- Semantic Search
-- RAG
-- Job Matcher
-- GitHub Integration
-- Tool Calling
-- Controlled Agent Workflow
-- LangGraph evaluation
-- MCP evaluation
-
-These are planned capabilities.
-
-They must not be presented as implemented until the relevant Build Order work is completed and verified.
+Public content distinguishes employment, independent or academic projects, formal education, and professional learning. Project work must not become an employment claim, and planned technology must not become an implemented-skill claim. Current approved corrections and evidence override older drafts.
 
 ---
 
-# 11. Current Strengths
+# 9. Current Phase and Gate
 
-Current project / candidate strengths include:
+**M0:** Foundation Complete
 
-- Existing full-stack project evidence
-- Project experience across multiple technical ecosystems
-- International professional experience
-- Leadership and operational maturity
-- Strong documentation-first project discipline
-- Clear learning goals
-- Structured AI-assisted development workflow
-- Existing GitHub project base that can be improved rather than started from zero
+**Current implementation phase completed:** Phase 6 — Professional Content Model and Homepage
 
----
+**Last completed gate:** Step 98 — Homepage Content Gate — PASSED
 
-# 12. Current Gaps
+**Completed implementation through:** Step 98
 
-Current gaps and later implementation work include:
+**Next phase:** Phase 7 — Projects and Case Studies
 
-- Portfolio UI and design-system work has not started
-- Public master software-developer resume still needs creation during Build Order
-- Public GitHub repository cleanup still required
-- Project screenshots/media still need final selection
-- Backend not created
-- PostgreSQL/pgvector not configured for this project
-- AI provider not selected
-- Embedding provider not selected
-- Hosting providers not selected
-- Production deployment not available
+**Next step:** Step 99 — Create the Projects index route — NOT STARTED
 
-These gaps are expected and mapped into the Master Build Order.
-
----
-
-# 13. Source-of-Truth Rule
-
-When professional facts conflict, use this priority:
-
-1. Verified official / personal records
-2. Explicit current user corrections
-3. Approved current resume
-4. Approved current project repository documentation
-5. Approved current LinkedIn content
-6. Current project foundation documents
-7. Older drafts / historical notes
-
-Explicitly corrected false information must never be reintroduced merely because an older source contains it.
-
----
-
-# 14. Professional Claim Rule
-
-Public content should distinguish:
-
-**Employment**  
-Real professional work.
-
-**Projects**  
-Technical work built independently / academically / personally.
-
-**Education**  
-Formal academic study.
-
-**Certifications / Learning**  
-Training and credentials.
-
-**Current Learning**  
-Technology currently being studied or implemented.
-
-These categories must not be blended in ways that exaggerate experience.
-
----
-
-# 15. Current Phase and Gate
-
-**M0 — Foundation Complete**
-
-Current phase:
-
-**Phase 3 — Frontend Initialization — COMPLETE**
-
-Last completed gate:
-
-**Step 41 — Frontend Foundation Gate — PASSED**
-
-Completed implementation:
-
-**Steps 24–40**
-
-Frontend foundation status:
-
-**Implemented, verified, and accepted**
-
-Final Phase 3 gate status:
-
-**PASSED — project-owner accepted on September 3, 2026**
-
-Next implementation step:
-
-**Step 42 — Define semantic color tokens based on the approved dark-first visual direction — NOT STARTED**
+**M1:** IN PROGRESS

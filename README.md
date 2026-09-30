@@ -2,11 +2,11 @@
 
 A recruiter-first developer portfolio and structured full-stack / applied-AI learning project.
 
-> **Project Status:** Phase 6 — Professional Content Model and Homepage is in progress.
+> **Project Status:** Phase 6 — Professional Content Model and Homepage is complete.
 >
-> The frontend foundation, design system, responsive shell, and source-controlled professional content through Step 79 are complete.
+> The recruiter-facing homepage, source-controlled professional content, responsive layout, accessibility baseline, and Step 98 Homepage Content Gate are complete.
 >
-> Step 79 — Public Content Truthfulness Review has passed. Step 80 — Build the homepage Hero layout is next.
+> Next: Phase 7 — Projects and Case Studies, Step 99 — Create the Projects index route.
 
 ---
 
@@ -19,17 +19,19 @@ This project is being developed for two connected purposes:
 
 The core portfolio will be useful without AI.
 
-Planned recruiter-facing content includes:
+The recruiter-facing homepage includes:
 
 - Professional introduction
 - Technical skills
 - Professional experience
 - Featured projects
-- Detailed project case studies
+- Supporting data and machine-learning projects
 - Education
 - Certifications / professional learning
 - Resume
 - Contact information
+
+Detailed project case studies are planned for Phase 7.
 
 After the recruiter-facing portfolio is stable, the application is planned to progressively add:
 
@@ -75,7 +77,7 @@ Approved foundation work includes:
 - Master Build Order
 - Definition of Done
 - Repository Agent Instructions
-- README v0.2
+- README v0.3
 
 The approved Master Build Order defines:
 
@@ -87,7 +89,7 @@ across:
 
 with milestone gates from M0 through M5.
 
-Steps 24–40 of the Phase 3 frontend foundation were implemented and individually verified. The frontend includes:
+The Phase 3 frontend foundation and Phase 6 homepage were implemented and verified. The frontend includes:
 
 - React, Vite, and TypeScript
 - Declarative React Router routing
@@ -104,14 +106,15 @@ Steps 24–40 of the Phase 3 frontend foundation were implemented and individual
 - Semantic design tokens and reusable UI primitives
 - Responsive desktop/mobile navigation and a shared footer
 - Source-controlled professional content and an approved public resume asset
+- A recruiter-facing homepage with featured software projects, skills, experience, supporting data/ML projects, education, selected professional learning, About, and resume/contact actions
 
-Step 41 — Frontend Foundation Gate and Step 67 — Professional Evidence Gate passed. Steps 68–79 are complete. Step 79 — Public Content Truthfulness Review passed; homepage implementation has not started.
+Step 41 — Frontend Foundation Gate, Step 67 — Professional Evidence Gate, Step 79 — Public Content Truthfulness Review, and Step 98 — Homepage Content Gate passed. Phase 6 Steps 68–98 are complete. Phase 7 begins with Step 99 — Create the Projects index route.
 
 ## Not Yet Implemented
 
 The following application capabilities do not yet exist:
 
-- Homepage and other recruiter-facing content sections
+- Projects index and detailed project case studies
 - Public portfolio deployment
 - FastAPI backend
 - PostgreSQL application persistence
@@ -603,27 +606,15 @@ Existing secondary technical evidence includes projects in areas such as:
 
 These projects support data/analytics capability without competing with the portfolio's primary software-development identity.
 
-Their public repository presentation will be improved before publication.
+Approved project media will be added when later Build Order steps call for it.
 
 ---
 
-# Planned Portfolio Areas
+# Portfolio Areas
 
-Potential routes/sections include:
+The current Home route contains the Hero, Featured Projects, Core Technical Skills, Professional Experience, Data & Machine Learning Projects, Education, Selected Professional Learning, About, and Resume/contact CTA sections.
 
-- Home
-- Projects
-- Project Case Studies
-- About
-- Skills
-- Professional Experience
-- Education
-- Certifications
-- Resume
-- Contact
-- AI Lab
-
-Final routing may evolve during implementation.
+The Projects index and detailed case studies begin in Phase 7. AI Lab remains a later planned area. Final routing may evolve during implementation.
 
 ---
 
@@ -917,7 +908,7 @@ npm run dev
 
 Additional scripts provide formatting, linting, component tests, production builds, and Playwright E2E verification. Backend setup remains future work.
 
-The frontend foundation and design system are in place. Step 79 — Public Content Truthfulness Review has passed. Step 80 — Homepage Hero layout is next.
+The frontend foundation and recruiter-facing homepage are in place. Step 98 — Homepage Content Gate passed. Step 99 — Create the Projects index route is next and has not started.
 
 ---
 
@@ -988,7 +979,7 @@ Third-party code/component licensing and attribution requirements will be review
 
 # Project Status
 
-**README Version:** 0.2
+**README Version:** 0.3
 
 **Planning Foundation:** M0 Complete
 
@@ -996,8 +987,8 @@ Third-party code/component licensing and attribution requirements will be review
 
 **Current Milestone:** M1 — Portfolio MVP in progress
 
-**Last Completed Gate:** Step 67 — Professional Evidence Gate — PASSED
+**Last Completed Gate:** Step 98 — Homepage Content Gate — PASSED
 
-**Phase 6 Status:** Steps 68–79 complete; Step 80 is next
+**Phase 6 Status:** COMPLETE — Steps 68–98 complete
 
-**Next Planned Step:** Step 80 — Build the homepage Hero layout — NOT STARTED
+**Next Planned Step:** Step 99 — Create the Projects index route — NOT STARTED
