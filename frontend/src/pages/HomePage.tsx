@@ -1,3 +1,5 @@
+import { AboutSection } from '../components/home/AboutSection'
+import { ContactCtaSection } from '../components/home/ContactCtaSection'
 import { DataProjectsSection } from '../components/home/DataProjectsSection'
 import { EducationSection } from '../components/home/EducationSection'
 import { ExperienceSection } from '../components/home/ExperienceSection'
@@ -16,6 +18,8 @@ export function HomePage() {
       <DataProjectsSection />
       <EducationSection />
       <ProfessionalLearningSection />
+      <AboutSection />
+      <ContactCtaSection />
     </>
   )
 }

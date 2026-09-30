@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { AppRoutes } from '../app/router'
 import { candidateProfile } from '../content/candidateProfile'
+import { contactInfo } from '../content/contactInfo'
 import { credentials } from '../content/credentials'
 import { education } from '../content/education'
 import { professionalExperience } from '../content/experience'
@@ -354,6 +355,63 @@ describe('HomePage', () => {
     expect(learningSection).not.toHaveTextContent(
       /master(?:'s|s)? (?:degree|program)|postgraduate degree/i,
     )
+
+    const aboutSection = within(main).getByRole('region', { name: 'About' })
+    expect(aboutSection).toHaveAttribute('id', 'about')
+    expect(
+      within(aboutSection).getByRole('heading', { level: 2, name: 'About' }),
+    ).toBeInTheDocument()
+    expect(
+      within(aboutSection)
+        .getAllByRole('paragraph')
+        .map((paragraph) => paragraph.textContent),
+    ).toEqual([...candidateProfile.about])
+
+    const contactSection = within(main).getByRole('region', {
+      name: "Let's Connect",
+    })
+    expect(contactSection).toHaveAttribute('id', 'contact')
+    expect(
+      within(contactSection).getByRole('heading', {
+        level: 2,
+        name: "Let's Connect",
+      }),
+    ).toBeInTheDocument()
+    const contactResumeLink = within(contactSection).getByRole('link', {
+      name: 'View Resume',
+    })
+    expect(contactResumeLink).toHaveAttribute('href', resumeAsset.url)
+    expect(contactResumeLink).toHaveAttribute('target', '_blank')
+    expect(contactResumeLink).toHaveAttribute('rel', 'noreferrer')
+    expect(contactResumeLink).not.toHaveAttribute('download')
+
+    if (contactInfo.email) {
+      expect(
+        within(contactSection).getByRole('link', { name: 'Email Me' }),
+      ).toHaveAttribute('href', `mailto:${contactInfo.email}`)
+    }
+    for (const profile of contactInfo.links) {
+      const profileLink = within(contactSection).getByRole('link', {
+        name: profile.label,
+      })
+      expect(profileLink).toHaveAttribute('href', profile.url)
+      expect(profileLink).toHaveAttribute('target', '_blank')
+      expect(profileLink).toHaveAttribute('rel', 'noreferrer')
+    }
+    expect(
+      within(contactSection)
+        .getAllByRole('link')
+        .map((link) => link.textContent),
+    ).toEqual([
+      'View Resume',
+      ...(contactInfo.email ? ['Email Me'] : []),
+      ...contactInfo.links.map((profile) => profile.label),
+    ])
+    if (contactInfo.location) {
+      expect(
+        within(contactSection).getByText(contactInfo.location),
+      ).toBeInTheDocument()
+    }
 
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
