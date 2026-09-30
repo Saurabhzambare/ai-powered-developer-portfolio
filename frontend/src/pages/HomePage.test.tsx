@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { AppRoutes } from '../app/router'
 import { candidateProfile } from '../content/candidateProfile'
+import { professionalExperience } from '../content/experience'
 import { resumeAsset } from '../content/resumeAsset'
 import { skillCategories } from '../content/skills'
 
@@ -166,6 +167,37 @@ describe('HomePage', () => {
         name: 'Professional Experience',
       }),
     ).toBeInTheDocument()
+    const experienceArticles = within(experienceSection).getAllByRole('article')
+    expect(experienceArticles).toHaveLength(professionalExperience.length)
+
+    for (const experience of professionalExperience) {
+      const article = within(experienceSection).getByRole('article', {
+        name: experience.role,
+      })
+      expect(
+        within(article).getByRole('heading', {
+          level: 3,
+          name: experience.role,
+        }),
+      ).toBeInTheDocument()
+      expect(
+        within(article).getByText(experience.organization),
+      ).toBeInTheDocument()
+      expect(
+        within(article).getByText(
+          [experience.period.start, experience.period.end].join(' – '),
+        ),
+      ).toBeInTheDocument()
+      expect(
+        within(article)
+          .getAllByRole('listitem')
+          .map((item) => item.textContent),
+      ).toEqual([...experience.highlights])
+      expect(within(article).getAllByRole('listitem')).toHaveLength(
+        experience.highlights.length,
+      )
+    }
+    expect(experienceSection).not.toHaveTextContent('2021 – May 2026')
 
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
