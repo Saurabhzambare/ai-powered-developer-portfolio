@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { AppRoutes } from '../app/router'
 import { candidateProfile } from '../content/candidateProfile'
 import { resumeAsset } from '../content/resumeAsset'
+import { skillCategories } from '../content/skills'
 
 describe('HomePage', () => {
   it('renders a named hero region on the homepage without starter content', () => {
@@ -128,6 +129,32 @@ describe('HomePage', () => {
         name: 'Core Technical Skills',
       }),
     ).toBeInTheDocument()
+    const skillCategoryArticles = within(skillsSection).getAllByRole('article')
+    expect(skillCategoryArticles).toHaveLength(skillCategories.length)
+    expect(
+      skillCategoryArticles.map(
+        (article) =>
+          within(article).getByRole('heading', { level: 3 }).textContent,
+      ),
+    ).toEqual(skillCategories.map((category) => category.title))
+
+    for (const category of skillCategories) {
+      const categoryArticle = within(skillsSection).getByRole('article', {
+        name: category.title,
+      })
+      expect(
+        within(categoryArticle).getByRole('heading', {
+          level: 3,
+          name: category.title,
+        }),
+      ).toBeInTheDocument()
+      expect(
+        within(categoryArticle)
+          .getAllByRole('listitem')
+          .map((item) => item.textContent),
+      ).toEqual([...category.skills])
+    }
+    expect(within(skillsSection).getAllByRole('listitem')).toHaveLength(21)
 
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
