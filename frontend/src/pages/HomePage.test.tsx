@@ -118,6 +118,17 @@ describe('HomePage', () => {
       }),
     ).toBeNull()
 
+    const skillsSection = within(main).getByRole('region', {
+      name: 'Core Technical Skills',
+    })
+    expect(skillsSection).toHaveAttribute('id', 'skills')
+    expect(
+      within(skillsSection).getByRole('heading', {
+        level: 2,
+        name: 'Core Technical Skills',
+      }),
+    ).toBeInTheDocument()
+
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
     expect(resumeLink).toHaveAttribute('target', '_blank')
