@@ -1,3 +1,4 @@
+import { DataProjectsSection } from '../components/home/DataProjectsSection'
 import { ExperienceSection } from '../components/home/ExperienceSection'
 import { FeaturedProjectsSection } from '../components/home/FeaturedProjectsSection'
 import { HeroSection } from '../components/home/HeroSection'
@@ -10,6 +11,7 @@ export function HomePage() {
       <FeaturedProjectsSection />
       <SkillsSection />
       <ExperienceSection />
+      <DataProjectsSection />
     </>
   )
 }

@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { AppRoutes } from '../app/router'
 import { candidateProfile } from '../content/candidateProfile'
 import { professionalExperience } from '../content/experience'
+import { projects } from '../content/projects'
 import { resumeAsset } from '../content/resumeAsset'
 import { skillCategories } from '../content/skills'
 
@@ -198,6 +199,66 @@ describe('HomePage', () => {
       )
     }
     expect(experienceSection).not.toHaveTextContent('2021 – May 2026')
+
+    const dataProjectsSection = within(main).getByRole('region', {
+      name: 'Data & Machine Learning Projects',
+    })
+    expect(dataProjectsSection).toHaveAttribute('id', 'data-projects')
+    expect(
+      within(dataProjectsSection).getByRole('heading', {
+        level: 2,
+        name: 'Data & Machine Learning Projects',
+      }),
+    ).toBeInTheDocument()
+
+    const dataProjectIds = [
+      'market-analysis-banking',
+      'mercedes-benz-greener-manufacturing',
+      'real-estate-mortgage-analytics',
+    ] as const
+    const selectedProjects = dataProjectIds.map((id) =>
+      projects.find((project) => project.id === id),
+    )
+    const dataProjectCards = within(dataProjectsSection).getAllByRole('article')
+    expect(dataProjectCards).toHaveLength(3)
+    expect(
+      dataProjectCards.map(
+        (card) => within(card).getByRole('heading', { level: 3 }).textContent,
+      ),
+    ).toEqual(selectedProjects.map((project) => project?.title))
+
+    selectedProjects.forEach((project, index) => {
+      expect(project).toBeDefined()
+      if (!project) return
+
+      const card = dataProjectCards[index]
+      expect(
+        within(card).getByRole('heading', { level: 3, name: project.title }),
+      ).toBeInTheDocument()
+      expect(within(card).getByText(project.summary)).toBeInTheDocument()
+      expect(
+        within(card)
+          .getAllByRole('listitem')
+          .map((item) => item.textContent),
+      ).toEqual([...project.technologies])
+      expect(
+        within(card).getByRole('link', { name: 'GitHub' }),
+      ).toHaveAttribute('href', project.links.githubUrl)
+      expect(within(card).queryByRole('link', { name: 'Live Demo' })).toBeNull()
+      expect(
+        within(card).queryByRole('link', { name: 'Case Study' }),
+      ).toBeNull()
+      expect(within(card).queryByRole('img')).toBeNull()
+    })
+    for (const title of [
+      'Discipline System',
+      'EPC Project & Vendor Management System',
+      'AI-Powered Developer Portfolio',
+    ]) {
+      expect(
+        within(dataProjectsSection).queryByRole('heading', { name: title }),
+      ).toBeNull()
+    }
 
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
