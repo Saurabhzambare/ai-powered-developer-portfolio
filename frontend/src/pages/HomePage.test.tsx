@@ -3,6 +3,8 @@ import { MemoryRouter } from 'react-router'
 import { describe, expect, it } from 'vitest'
 import { AppRoutes } from '../app/router'
 import { candidateProfile } from '../content/candidateProfile'
+import { credentials } from '../content/credentials'
+import { education } from '../content/education'
 import { professionalExperience } from '../content/experience'
 import { projects } from '../content/projects'
 import { resumeAsset } from '../content/resumeAsset'
@@ -259,6 +261,99 @@ describe('HomePage', () => {
         within(dataProjectsSection).queryByRole('heading', { name: title }),
       ).toBeNull()
     }
+
+    const educationSection = within(main).getByRole('region', {
+      name: 'Education',
+    })
+    expect(educationSection).toHaveAttribute('id', 'education')
+    expect(
+      within(educationSection).getByRole('heading', {
+        level: 2,
+        name: 'Education',
+      }),
+    ).toBeInTheDocument()
+    const educationArticles = within(educationSection).getAllByRole('article')
+    expect(educationArticles).toHaveLength(education.length)
+    expect(
+      educationArticles.map(
+        (article) =>
+          within(article).getByRole('heading', { level: 3 }).textContent,
+      ),
+    ).toEqual(education.map((record) => record.qualification))
+
+    for (const record of education) {
+      const article = within(educationSection).getByRole('article', {
+        name: record.qualification,
+      })
+      expect(
+        within(article).getByRole('heading', {
+          level: 3,
+          name: record.qualification,
+        }),
+      ).toBeInTheDocument()
+      expect(within(article).getByText(record.institution)).toBeInTheDocument()
+      expect(
+        within(article).getByText(
+          [record.period.start, record.period.end].join(' – '),
+        ),
+      ).toBeInTheDocument()
+
+      if ('details' in record) {
+        expect(
+          within(article)
+            .getAllByRole('listitem')
+            .map((item) => item.textContent),
+        ).toEqual([...record.details])
+      } else {
+        expect(within(article).queryByRole('list')).toBeNull()
+      }
+    }
+
+    const learningSection = within(main).getByRole('region', {
+      name: 'Selected Professional Learning',
+    })
+    expect(learningSection).toHaveAttribute('id', 'professional-learning')
+    expect(
+      within(learningSection).getByRole('heading', {
+        level: 2,
+        name: 'Selected Professional Learning',
+      }),
+    ).toBeInTheDocument()
+    expect(
+      credentials.every(
+        (credential) => credential.kind === 'professional-learning',
+      ),
+    ).toBe(true)
+    const credentialArticles = within(learningSection).getAllByRole('article')
+    expect(credentialArticles).toHaveLength(credentials.length)
+    expect(
+      credentialArticles.map(
+        (article) =>
+          within(article).getByRole('heading', { level: 3 }).textContent,
+      ),
+    ).toEqual(credentials.map((credential) => credential.title))
+
+    for (const credential of credentials) {
+      const article = within(learningSection).getByRole('article', {
+        name: credential.title,
+      })
+      expect(
+        within(article).getByRole('heading', {
+          level: 3,
+          name: credential.title,
+        }),
+      ).toBeInTheDocument()
+      expect(within(article).getByText(credential.issuer)).toBeInTheDocument()
+      if (credential.issuedOn) {
+        expect(
+          within(article).getByText(credential.issuedOn),
+        ).toBeInTheDocument()
+      }
+      expect(within(article).queryByRole('link')).toBeNull()
+    }
+    expect(learningSection).not.toHaveTextContent(
+      /master(?:'s|s)? (?:degree|program)|postgraduate degree/i,
+    )
 
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
