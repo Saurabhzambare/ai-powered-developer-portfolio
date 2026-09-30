@@ -156,6 +156,17 @@ describe('HomePage', () => {
     }
     expect(within(skillsSection).getAllByRole('listitem')).toHaveLength(21)
 
+    const experienceSection = within(main).getByRole('region', {
+      name: 'Professional Experience',
+    })
+    expect(experienceSection).toHaveAttribute('id', 'experience')
+    expect(
+      within(experienceSection).getByRole('heading', {
+        level: 2,
+        name: 'Professional Experience',
+      }),
+    ).toBeInTheDocument()
+
     const resumeLink = within(hero).getByRole('link', { name: 'View Resume' })
     expect(resumeLink).toHaveAttribute('href', resumeAsset.url)
     expect(resumeLink).toHaveAttribute('target', '_blank')
