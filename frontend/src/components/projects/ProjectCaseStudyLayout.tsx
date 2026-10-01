@@ -40,18 +40,18 @@ export function ProjectCaseStudyLayout({
           </Heading>
           {paragraphs && paragraphs.length > 0 && (
             <div className="mt-6 space-y-4">
-              {paragraphs.map((paragraph) => (
-                <Text key={paragraph} tone="muted">
+              {paragraphs.map((paragraph, index) => (
+                <Text key={`${index}-${paragraph}`} tone="muted">
                   {paragraph}
-                </Text>
-              ))}
+                  </Text>
+                ))}
             </div>
           )}
           {items && items.length > 0 && (
             <ul className="mt-6 list-disc space-y-2 pl-5 text-body text-muted-foreground">
-              {items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+              {items.map((item, index) => (
+                <li key={`${index}-${item}`}>{item}</li>
+                ))}
             </ul>
           )}
         </section>
