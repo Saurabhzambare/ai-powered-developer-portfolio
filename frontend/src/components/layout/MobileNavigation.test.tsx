@@ -34,6 +34,10 @@ describe('MobileNavigation', () => {
     expect(
       screen.getByRole('navigation', { name: 'Mobile primary navigation' }),
     ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Projects' })).toHaveAttribute(
+      'href',
+      '/projects',
+    )
   })
 
   it('closes after activating a navigation destination', async () => {
@@ -42,7 +46,7 @@ describe('MobileNavigation', () => {
 
     const trigger = screen.getByRole('button', { name: 'Menu' })
     await user.click(trigger)
-    await user.click(screen.getByRole('link', { name: 'Home' }))
+    await user.click(screen.getByRole('link', { name: 'Projects' }))
 
     expect(trigger).toHaveAttribute('aria-expanded', 'false')
     expect(

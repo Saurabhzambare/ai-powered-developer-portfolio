@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest'
 import { DesktopNavigation } from './DesktopNavigation'
 
 describe('DesktopNavigation', () => {
-  it('renders the currently supported navigation destination', () => {
+  it('renders the supported navigation destinations', () => {
     render(
       <MemoryRouter>
         <DesktopNavigation />
@@ -16,10 +16,12 @@ describe('DesktopNavigation', () => {
       name: 'Primary navigation',
     })
     const homeLink = screen.getByRole('link', { name: 'Home' })
+    const projectsLink = screen.getByRole('link', { name: 'Projects' })
 
     expect(navigation).toBeInTheDocument()
     expect(homeLink).toHaveAttribute('href', '/')
     expect(homeLink).toHaveAttribute('aria-current', 'page')
+    expect(projectsLink).toHaveAttribute('href', '/projects')
     expect(
       screen.queryByRole('link', { name: /ai lab/i }),
     ).not.toBeInTheDocument()
@@ -38,6 +40,7 @@ describe('DesktopNavigation', () => {
       name: 'Developer Portfolio',
     })
     const homeLink = screen.getByRole('link', { name: 'Home' })
+    const projectsLink = screen.getByRole('link', { name: 'Projects' })
 
     await user.tab()
     expect(portfolioLink).toHaveFocus()
@@ -49,6 +52,13 @@ describe('DesktopNavigation', () => {
     await user.tab()
     expect(homeLink).toHaveFocus()
     expect(homeLink).toHaveClass(
+      'focus-visible:ring-2',
+      'focus-visible:ring-ring',
+    )
+
+    await user.tab()
+    expect(projectsLink).toHaveFocus()
+    expect(projectsLink).toHaveClass(
       'focus-visible:ring-2',
       'focus-visible:ring-ring',
     )

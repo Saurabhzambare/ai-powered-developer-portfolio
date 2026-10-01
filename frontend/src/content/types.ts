@@ -101,6 +101,29 @@ export interface PortfolioProject {
   readonly media?: readonly ProjectMedia[]
 }
 
+export interface ProjectCaseStudySection {
+  readonly paragraphs?: readonly string[]
+  readonly items?: readonly string[]
+}
+
+export interface ProjectCaseStudy {
+  // Match the canonical PortfolioProject.id; shared facts stay in PortfolioProject.
+  readonly projectId: string
+  readonly overview: ProjectCaseStudySection
+  readonly problemMotivation?: ProjectCaseStudySection
+  readonly requirements?: ProjectCaseStudySection
+  readonly mainFeatures?: ProjectCaseStudySection
+  readonly architecture?: ProjectCaseStudySection
+  readonly implementationApproach?: ProjectCaseStudySection
+  readonly engineeringDecisions?: ProjectCaseStudySection
+  readonly testing?: ProjectCaseStudySection
+  readonly challenges?: ProjectCaseStudySection
+  readonly solutionsTradeoffs?: ProjectCaseStudySection
+  readonly deployment?: ProjectCaseStudySection
+  readonly lessonsLearned?: ProjectCaseStudySection
+  readonly futureImprovements?: ProjectCaseStudySection
+}
+
 export interface ResumeAsset {
   readonly url: string
   readonly fileName: string

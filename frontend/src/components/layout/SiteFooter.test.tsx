@@ -16,10 +16,12 @@ describe('SiteFooter', () => {
       name: 'Footer navigation',
     })
     const homeLink = screen.getByRole('link', { name: 'Home' })
+    const projectsLink = screen.getByRole('link', { name: 'Projects' })
 
     expect(footer).toContainElement(navigation)
     expect(footer).toHaveTextContent('Developer Portfolio')
     expect(homeLink).toHaveAttribute('href', '/')
+    expect(projectsLink).toHaveAttribute('href', '/projects')
     expect(
       screen.queryByRole('link', { name: /ai lab/i }),
     ).not.toBeInTheDocument()
